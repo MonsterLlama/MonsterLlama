@@ -71,7 +71,7 @@ namespace MonsterLlama.Algorithms.Sorting
                 watch.Start();
                 comparisons = QuickSortLomutoHelper(array, 0, array.Length - 1);
                 watch.Stop();
-                WriteLine($"Lomuto's Quicksort run time for input '{array.Length}' was '{watch.Elapsed.ToString()}'.");
+                WriteLine($"Lomuto's Quicksort's run time for input '{array.Length}' was '{watch.Elapsed.ToString()}'.");
             }
             else
             {

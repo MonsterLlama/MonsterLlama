@@ -8,19 +8,21 @@ namespace MonsterLlama
     {
         static void Main(string[] args)
         {
-            int[] array = new int[16];
+            int[] array = new int[4096];
 
             var seed = (int) DateTime.Now.Ticks % Int32.MaxValue;
             var random = new Random(seed);
             for (int index=0; index<array.Length; index++)
             {
-                array[index] = random.Next(128);
+                array[index] = random.Next(255);
             }
 
             var swaps = QuickSortLomuto(array);
+            WriteLine($"Lomuto's Quicksort's # of comparisons for an array of size '{array.Length}' was '{swaps}'.");
 
-            var array2 = new int[] { 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-            var swaps2 = QuickSortLomuto(array2);
+            Array.Reverse(array);
+            swaps = QuickSortLomuto(array);
+            WriteLine($"Lomuto's Quicksort's # of comparisons for a reverse sorted array of size '{array.Length}' was '{swaps}'.");
 
         }
 
